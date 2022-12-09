@@ -48,7 +48,7 @@ const Home = () => {
             <h2>Ask a question about life, get a response from the Tao Te Ching</h2>
           </div>
           <div className="prompt-container">
-            <textarea placeholder="start typing here"
+            <textarea placeholder="Ask a question about life..."
               className="prompt-box"
               value={userInput}
               onChange={onUserChangedText} />

@@ -6,7 +6,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const basePromptPrefix = "";
+const basePromptPrefix = "Answer the question with a new and novel Tao Te Ching verse in the style of Stephen Mitchell's translation that is very wise and relevant to the question. Question: What is the most important thing in life? Verse: He who knows how to be still, Finds the answer that comes to him; A wise man knows when it's time, To wait and see what the future will bring. Question: ${req.body.userInput} Verse:}"
 
 const generateAction = async (req, res) => {
   // Run first prompt
@@ -14,7 +14,7 @@ const generateAction = async (req, res) => {
 
   const baseCompletion = await openai.createCompletion({
     model: 'text-davinci-003',
-    prompt: `${basePromptPrefix}${req.body.userInput}`,
+    prompt: `${basePromptPrefix}`,
     temperature: 0.7,
     max_tokens: 250,
   });
